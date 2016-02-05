@@ -1,6 +1,6 @@
 ---
 name: cf-3826383a6cbd52cd0795
-director_uuid: ad01a750-504c-4e13-9557-960d2a013691
+director_uuid: BOSH-DIRECTOR-UUID # Replace it with the UUID of your BOSH director
 releases:
 - name: cf-mysql
   version: '23'
@@ -33,7 +33,7 @@ networks:
   - range: 10.0.16.0/20
     gateway: 10.0.16.1
     dns:
-    - 10.0.0.100
+    - 10.0.0.100  # <--- Replace with your DNS IP if you are planning to use custom domain
     static:
     - 10.0.16.11
     - 10.0.16.12
@@ -56,7 +56,7 @@ networks:
     - 10.0.16.22-10.0.16.23
     - 10.0.16.64-10.0.31.254
     cloud_properties:
-      virtual_network_name: boshvnet-crp # <--- Replace with virtual network name
+      virtual_network_name: VNET-NAME # <--- Replace with virtual network name
       subnet_name: CloudFoundry # <--- Replace with subnet name for cloud foundry VMs
 resource_pools:
 - name: nats-partition-e4fffe2eeec37a9cd821
